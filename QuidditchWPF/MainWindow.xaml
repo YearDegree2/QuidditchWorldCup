@@ -1,0 +1,12 @@
+﻿<Window x:Class="QuidditchWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Coupe du monde de Quidditch" Height="350" Width="550">
+    <StackPanel Orientation="Vertical">
+        <Button Margin="10" Content="Afficher la liste des Match prévus classés par date de début" Click="ButtonClickGetMatchsByDateOrd"/>
+        <Button Margin="10" Content="Afficher la liste des Stades pour lesquels au moins un Match est programmé" Click="ButtonClickGetStadesMinOneMatch"/>
+        <Button Margin="10" Content="Afficher la liste des attrapeurs qui ont joués au moins un Match" Click="ButtonClickGetAttrapeursMinOneMatchPlayed"/>
+        <Button Margin="10" Content="Afficher la liste des gardiens qui ont moins de 17 ans" Click="ButtonClickGetGardiensMoins17Ans"/>
+        <Button Margin="10" Content="Afficher le nombre de places restantes pour le match Gryffondor - Serpentard du 02/01/2015" Click="ButtonClickGetNbPlacesRestantesMatch02012015"/>
+    </StackPanel>
+</Window>

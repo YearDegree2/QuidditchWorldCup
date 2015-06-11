@@ -1,0 +1,8 @@
+﻿<Window x:Class="QuidditchWPF.Windows.WindowDisplayAttrapeursMinOneMatchPlayed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Liste des attrapeurs qui ont au moins joué un match" MinHeight="500" MinWidth="800">
+    <StackPanel Orientation="Vertical">
+        <ListBox Name="listAttrapeurs" Loaded="listAttrapeurs_Loaded"></ListBox>
+    </StackPanel>
+</Window>
