@@ -68,5 +68,11 @@ namespace QuidditchWPF
             SaveDimensions.GetInstance().LoadFenetresProperties();
             SaveDimensions.GetInstance().loadDimensionsWindow(this);
         }
+
+        private void ButtonClickGestionEquipe(object sender, RoutedEventArgs e)
+        {
+            WindowDisplayGestionMatchs window = new WindowDisplayGestionMatchs();
+            window.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="QuidditchWPF.View.MatchView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Height="300" Width="370">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Coupe" />
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Date" />
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Equipe domicile" />
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Equipe visiteur" />
+        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Prix" />
+        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Stade" />
+        <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Arbitre" />
+        <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Score equipe domicile" />
+        <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"  
+               Content="Score equipe visiteur" />
+        <ComboBox Grid.Row="0" Grid.Column="1" Name="cCoupes" VerticalAlignment="Center" 
+                  MinWidth="150"
+                  SelectedItem="{Binding Path=Coupe, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Coupes, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
+        <TextBox  Grid.Row="1" Grid.Column="1" Name="tbDate" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  MinWidth="150"
+                  Text="{Binding Path=Date, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="cEquipeDomicile" VerticalAlignment="Center" 
+                  MinWidth="150"
+                  SelectedItem="{Binding Path=EquipeDomicile, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Equipes, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" Name="cEquipeViiteur" VerticalAlignment="Center" 
+                  MinWidth="150"
+                  SelectedItem="{Binding Path=EquipeVisiteur, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Equipes, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
+        <TextBox  Grid.Row="4" Grid.Column="1" Name="tbPrix" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  MinWidth="150"
+                  Text="{Binding Path=Prix, UpdateSourceTrigger=PropertyChanged}" />
+        <ComboBox Grid.Row="5" Grid.Column="1" Name="cStades" VerticalAlignment="Center" 
+                  MinWidth="230"
+                  SelectedItem="{Binding Path=Stade, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Stades, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
+        <ComboBox Grid.Row="6" Grid.Column="1" Name="cArbitres" VerticalAlignment="Center" 
+                  MinWidth="150"
+                  SelectedItem="{Binding Path=Arbitre, UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding Path=Arbitres, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left"/>
+        <TextBox  Grid.Row="7" Grid.Column="1" Name="tbScoreEquipeDomicile" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  MinWidth="150"
+                  Text="{Binding Path=ScoreEquipeDomicile, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox  Grid.Row="8" Grid.Column="1" Name="tbScoreEquipeVisiteur" HorizontalAlignment="Left" VerticalAlignment="Center"
+                  MinWidth="150"
+                  Text="{Binding Path=ScoreEquipeVisiteur, UpdateSourceTrigger=PropertyChanged}" />
+    </Grid>
+</UserControl>

@@ -55,11 +55,24 @@
     </ApplicationDefinition>
     <Compile Include="Persistance\Fenetre.cs" />
     <Compile Include="Persistance\SaveDimensions.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\ViewModelMatch.cs" />
+    <Compile Include="ViewModel\ViewModelMatchs.cs" />
+    <Compile Include="View\MatchsView.xaml.cs">
+      <DependentUpon>MatchsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MatchView.xaml.cs">
+      <DependentUpon>MatchView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\WindowDisplayAttrapeursMinOneMatchPlayed.xaml.cs">
       <DependentUpon>WindowDisplayAttrapeursMinOneMatchPlayed.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowDisplayGardiensMoins17Ans.xaml.cs">
       <DependentUpon>WindowDisplayGardiensMoins17Ans.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\WindowDisplayGestionMatchs.xaml.cs">
+      <DependentUpon>WindowDisplayGestionMatchs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowDisplayMatchsByDateOrd.xaml.cs">
       <DependentUpon>WindowDisplayMatchsByDateOrd.xaml</DependentUpon>
@@ -82,11 +95,23 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\MatchsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MatchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\WindowDisplayAttrapeursMinOneMatchPlayed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\WindowDisplayGardiensMoins17Ans.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\WindowDisplayGestionMatchs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

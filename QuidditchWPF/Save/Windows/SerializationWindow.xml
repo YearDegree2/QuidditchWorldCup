@@ -43,5 +43,12 @@
       <Hauteur>413</Hauteur>
       <Largeur>800</Largeur>
     </Fenetre>
+    <Fenetre>
+      <Name>WindowDisplayGestionMatchs</Name>
+      <PosX>580</PosX>
+      <PosY>220</PosY>
+      <Hauteur>407</Hauteur>
+      <Largeur>827</Largeur>
+    </Fenetre>
   </ListWindows>
 </SaveDimensions>
