@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessLayer;
 using BusinessLayer.Interfaces;
+using QuidditchWPF.Persistance;
 
 namespace QuidditchWPF.Windows
 {
@@ -31,6 +32,16 @@ namespace QuidditchWPF.Windows
             CoupeManager coupeManager = new CoupeManager();
             IEnumerable<IMatch> matchsOrd = coupeManager.GetMatchsByDateOrd();
             this.nbPlacesRestantes.Text = coupeManager.GetNbPlacesRestantes(matchsOrd.First()) + " places restantes";
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveDimensions.GetInstance().saveDimensionsWindow(this);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SaveDimensions.GetInstance().loadDimensionsWindow(this);
         }
     }
 }

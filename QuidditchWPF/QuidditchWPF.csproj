@@ -53,6 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Persistance\Fenetre.cs" />
+    <Compile Include="Persistance\SaveDimensions.cs" />
     <Compile Include="Windows\WindowDisplayAttrapeursMinOneMatchPlayed.xaml.cs">
       <DependentUpon>WindowDisplayAttrapeursMinOneMatchPlayed.xaml</DependentUpon>
     </Compile>
@@ -133,6 +135,9 @@
       <Project>{9bc3af70-792a-47de-b9c4-765aac86bc92}</Project>
       <Name>BusinessLayer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Save\Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

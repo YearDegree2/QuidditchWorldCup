@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BusinessLayer;
+using QuidditchWPF.Persistance;
 
 namespace QuidditchWPF.Windows
 {
@@ -29,6 +30,16 @@ namespace QuidditchWPF.Windows
         {
             CoupeManager coupeManager = new CoupeManager();
             this.listGardiens.ItemsSource = coupeManager.GetGardiensMoins17Ans();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveDimensions.GetInstance().saveDimensionsWindow(this);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SaveDimensions.GetInstance().loadDimensionsWindow(this);
         }
     }
 }

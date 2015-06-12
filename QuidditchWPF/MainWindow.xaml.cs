@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using QuidditchWPF.Windows;
+using QuidditchWPF.Persistance;
 
 namespace QuidditchWPF
 {
@@ -54,6 +55,18 @@ namespace QuidditchWPF
         {
             WindowDisplayNbPlacesRestantesMatch02012015 window = new WindowDisplayNbPlacesRestantesMatch02012015();
             window.ShowDialog();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            SaveDimensions.GetInstance().saveDimensionsWindow(this);
+            SaveDimensions.GetInstance().SaveFenetresProperties();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            SaveDimensions.GetInstance().LoadFenetresProperties();
+            SaveDimensions.GetInstance().loadDimensionsWindow(this);
         }
     }
 }

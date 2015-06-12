@@ -1,7 +1,8 @@
 ﻿<Window x:Class="QuidditchWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Coupe du monde de Quidditch" Height="350" Width="550">
+        Title="Coupe du monde de Quidditch" Height="350" Width="550"
+        Closing="Window_Closing" Loaded="Window_Loaded">
     <StackPanel Orientation="Vertical">
         <Button Margin="10" Content="Afficher la liste des Match prévus classés par date de début" Click="ButtonClickGetMatchsByDateOrd"/>
         <Button Margin="10" Content="Afficher la liste des Stades pour lesquels au moins un Match est programmé" Click="ButtonClickGetStadesMinOneMatch"/>
