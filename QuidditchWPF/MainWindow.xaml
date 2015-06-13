@@ -8,7 +8,7 @@
         <Button Margin="10" Content="Afficher la liste des Stades pour lesquels au moins un Match est programmé" Click="ButtonClickGetStadesMinOneMatch"/>
         <Button Margin="10" Content="Afficher la liste des attrapeurs qui ont joués au moins un Match" Click="ButtonClickGetAttrapeursMinOneMatchPlayed"/>
         <Button Margin="10" Content="Afficher la liste des gardiens qui ont moins de 17 ans" Click="ButtonClickGetGardiensMoins17Ans"/>
-        <Button Margin="10" Content="Afficher le nombre de places restantes pour le match Gryffondor - Serpentard du 02/01/2015" Click="ButtonClickGetNbPlacesRestantesMatch02012015"/>
+        <Button Margin="10" Content="Afficher le nombre de places restantes pour le match avec l'id le plus petit" Click="ButtonClickGetNbPlacesRestantesMatchFirstId"/>
         <Button Margin="10" Content="Gestion des matchs" Click="ButtonClickGestionEquipe"/>
     </StackPanel>
 </Window>

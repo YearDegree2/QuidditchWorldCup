@@ -77,8 +77,8 @@
     <Compile Include="Windows\WindowDisplayMatchsByDateOrd.xaml.cs">
       <DependentUpon>WindowDisplayMatchsByDateOrd.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Windows\WindowDisplayNbPlacesRestantesMatch02012015.xaml.cs">
-      <DependentUpon>WindowDisplayNbPlacesRestantesMatch02012015.xaml</DependentUpon>
+    <Compile Include="Windows\WindowDisplayNbPlacesRestantesMatchFirstId.xaml.cs">
+      <DependentUpon>WindowDisplayNbPlacesRestantesMatchFirstId.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowDisplayStadesMinOneMatch.xaml.cs">
       <DependentUpon>WindowDisplayStadesMinOneMatch.xaml</DependentUpon>
@@ -119,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\WindowDisplayNbPlacesRestantesMatch02012015.xaml">
+    <Page Include="Windows\WindowDisplayNbPlacesRestantesMatchFirstId.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

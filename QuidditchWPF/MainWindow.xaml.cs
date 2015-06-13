@@ -51,9 +51,9 @@ namespace QuidditchWPF
             window.ShowDialog();
         }
 
-        private void ButtonClickGetNbPlacesRestantesMatch02012015(object sender, RoutedEventArgs e)
+        private void ButtonClickGetNbPlacesRestantesMatchFirstId(object sender, RoutedEventArgs e)
         {
-            WindowDisplayNbPlacesRestantesMatch02012015 window = new WindowDisplayNbPlacesRestantesMatch02012015();
+            WindowDisplayNbPlacesRestantesMatchFirstId window = new WindowDisplayNbPlacesRestantesMatchFirstId();
             window.ShowDialog();
         }
 

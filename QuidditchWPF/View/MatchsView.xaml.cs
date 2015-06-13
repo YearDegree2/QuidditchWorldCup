@@ -31,11 +31,7 @@ namespace QuidditchWPF.View
         private void lvMatchs_Loaded(object sender, RoutedEventArgs e)
         {
             CoupeManager manager = new CoupeManager();
-            ICollection<ICoupe> coupes = manager.GetAllCoupes();
-            ICollection<IEquipe> equipes = manager.GetAllEquipes();
-            ICollection<IStade> stades = manager.GetAllStades();
-            ICollection<IArbitre> arbitres = manager.GetAllArbitres();
-            ViewModelMatchs matchs = new ViewModelMatchs(manager.GetAllMatchs(), coupes, equipes, stades, arbitres);
+            ViewModelMatchs matchs = new ViewModelMatchs(manager.GetMatchs(), manager.GetCoupes(), manager.GetEquipes(), manager.GetStades(), manager.GetArbitres());
             this.DataContext = matchs;
         }
     }

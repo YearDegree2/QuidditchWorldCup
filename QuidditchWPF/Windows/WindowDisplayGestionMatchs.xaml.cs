@@ -38,11 +38,11 @@ namespace QuidditchWPF.Windows
             SaveDimensions.GetInstance().loadDimensionsWindow(this);
 
             CoupeManager manager = new CoupeManager();
-            ICollection<IMatch> matchs = manager.GetAllMatchs();
-            ICollection<ICoupe> coupes = manager.GetAllCoupes();
-            ICollection<IEquipe> equipes = manager.GetAllEquipes();
-            ICollection<IStade> stades = manager.GetAllStades();
-            ICollection<IArbitre> arbitres = manager.GetAllArbitres();
+            ICollection<IMatch> matchs = manager.GetMatchs();
+            ICollection<ICoupe> coupes = manager.GetCoupes();
+            ICollection<IEquipe> equipes = manager.GetEquipes();
+            ICollection<IStade> stades = manager.GetStades();
+            ICollection<IArbitre> arbitres = manager.GetArbitres();
 
             ViewModel.ViewModelMatchs vmm = new QuidditchWPF.ViewModel.ViewModelMatchs(matchs, coupes, equipes, stades, arbitres);
             vmm.CloseNotified += CloseNotified;

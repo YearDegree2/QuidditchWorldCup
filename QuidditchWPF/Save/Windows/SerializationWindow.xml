@@ -3,52 +3,59 @@
   <ListWindows>
     <Fenetre>
       <Name>Coupe du monde de Quidditch</Name>
-      <PosX>771</PosX>
-      <PosY>61</PosY>
+      <PosX>795</PosX>
+      <PosY>14</PosY>
       <Hauteur>497</Hauteur>
       <Largeur>780</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>Liste des attrapeurs qui ont au moins joué un match</Name>
-      <PosX>786</PosX>
-      <PosY>370</PosY>
+      <PosX>773</PosX>
+      <PosY>350</PosY>
       <Hauteur>500</Hauteur>
       <Largeur>800</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>Liste des matchs triés par date de début</Name>
-      <PosX>38</PosX>
-      <PosY>24</PosY>
+      <PosX>385</PosX>
+      <PosY>253</PosY>
       <Hauteur>624</Hauteur>
       <Largeur>1200</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>Liste des stades avec au moins un match programmé</Name>
-      <PosX>19</PosX>
-      <PosY>86</PosY>
+      <PosX>739</PosX>
+      <PosY>343</PosY>
       <Hauteur>500</Hauteur>
       <Largeur>800</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>Liste des gardiens de moins de 17 ans</Name>
       <PosX>771</PosX>
-      <PosY>175</PosY>
-      <Hauteur>624</Hauteur>
+      <PosY>339</PosY>
+      <Hauteur>500</Hauteur>
       <Largeur>800</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>Nombre de places restantes pour le match Gryffondor - Serpentard du 02/01/2015</Name>
-      <PosX>33</PosX>
-      <PosY>394</PosY>
+      <PosX>316</PosX>
+      <PosY>403</PosY>
       <Hauteur>413</Hauteur>
       <Largeur>800</Largeur>
     </Fenetre>
     <Fenetre>
       <Name>WindowDisplayGestionMatchs</Name>
-      <PosX>580</PosX>
-      <PosY>220</PosY>
+      <PosX>697</PosX>
+      <PosY>368</PosY>
       <Hauteur>407</Hauteur>
       <Largeur>827</Largeur>
+    </Fenetre>
+    <Fenetre>
+      <Name>Nombre de places restantes pour le match avec l'id le plus petit</Name>
+      <PosX>367</PosX>
+      <PosY>210</PosY>
+      <Hauteur>624</Hauteur>
+      <Largeur>1200</Largeur>
     </Fenetre>
   </ListWindows>
 </SaveDimensions>
