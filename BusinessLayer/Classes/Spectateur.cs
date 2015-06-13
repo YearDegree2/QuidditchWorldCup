@@ -83,5 +83,10 @@ namespace BusinessLayer.Classes
             Spectateur spectateur = (Spectateur)obj;
             return Id.Equals(spectateur.Id);
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} {1}", Prenom, Nom);
+        }
     }
 }

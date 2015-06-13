@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BusinessLayer.Interfaces;
 using BusinessLayer;
+using QuidditchWorldCup.Tests;
 
 namespace QuidditchWorldCup
 {
@@ -13,20 +14,24 @@ namespace QuidditchWorldCup
         static void Main(string[] args)
         {
             CoupeManager coupeManager = new CoupeManager();
-            ICollection<ICoupe> coupes = coupeManager.GetAllCoupes();
-            IEnumerable<IMatch> matchsOrd = coupeManager.GetMatchsByDateOrd();
+
+            Test.testDALAccess(coupeManager);
+            
+            
+            
+            /*ICollection<ICoupe> coupes = coupeManager.GetAllCoupes();
+            /*IEnumerable<IMatch> matchsOrd = coupeManager.GetMatchsByDateOrd();
             IEnumerable<IStade> stades = coupeManager.GetStadesMinOneMatch();
             IEnumerable<IJoueur> attrapeursMinOneMatchPlayed = coupeManager.GetAttrapeursMinOneMatchPlayed();
             IEnumerable<IJoueur> gardiensMoins17Ans = coupeManager.GetGardiensMoins17Ans();
             int nbPlacesRestant = coupeManager.GetNbPlacesRestantes(matchsOrd.First());
-
             Console.WriteLine("Coupes : ");
             foreach (ICoupe coupe in coupes)
             {
                 Console.WriteLine(coupe);
             }
             Console.WriteLine();
-            Console.WriteLine("Matchs ordonnés par date : ");
+           /* Console.WriteLine("Matchs ordonnés par date : ");
             foreach (IMatch match in matchsOrd)
             {
                 Console.WriteLine(match);
@@ -50,7 +55,13 @@ namespace QuidditchWorldCup
             }
             Console.WriteLine();
             Console.WriteLine("Nombre de places restantes pour le match Gryffondor - Serpentard du 02/01/2015");
-            Console.WriteLine(String.Format("{0} places restantes", nbPlacesRestant));
+            Console.WriteLine(String.Format("{0} places restantes", nbPlacesRestant));*/
+
+
+
+            
+            
+
             Console.ReadLine();
         }
     }

@@ -56,8 +56,11 @@
     <Compile Include="Interfaces\IReservation.cs" />
     <Compile Include="Interfaces\ISpectateur.cs" />
     <Compile Include="Interfaces\IStade.cs" />
+    <Compile Include="Manager\Bridge.cs" />
+    <Compile Include="Manager\DALManager.cs" />
     <Compile Include="Manager\DALProxy.cs" />
     <Compile Include="Manager\IDALManager.cs" />
+    <Compile Include="Manager\SqlDB.cs" />
     <Compile Include="Manager\StubDALManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

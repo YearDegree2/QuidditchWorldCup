@@ -17,6 +17,7 @@ namespace DataAccessLayer.Manager
         private ICollection<IStade> _stades;
         private ICollection<IReservation> _reservations;
         private ICollection<IArbitre> _arbitres;
+        private ICollection<ISpectateur> _spectateurs;
 
         public ICollection<ICoupe> Coupes
         {
@@ -60,6 +61,12 @@ namespace DataAccessLayer.Manager
             private set { _arbitres = value; }
         }
 
+        public ICollection<ISpectateur> Spectateurs
+        {
+            get { return _spectateurs; }
+            private set { _spectateurs = value; }
+        }
+
 
         public StubDALManager()
         {
@@ -70,6 +77,7 @@ namespace DataAccessLayer.Manager
             Stades = new List<IStade>();
             Reservations = new List<IReservation>();
             Arbitres = new List<IArbitre>();
+            Spectateurs = new List<ISpectateur>();
 
             createData();
         }
@@ -99,7 +107,7 @@ namespace DataAccessLayer.Manager
             Joueurs.Add(j9);
             Joueurs.Add(j10);
             Joueurs.Add(j11);
-
+            
             ICollection<IJoueur> equipeDom = new List<IJoueur>();
             ICollection<IJoueur> equipeVis = new List<IJoueur>();
             equipeDom.Add(j1);
@@ -139,13 +147,29 @@ namespace DataAccessLayer.Manager
             Matchs.Add(match2);
             Matchs.Add(match3);
 
-            Reservations.Add(new Reservation(1, match3, 1, new Spectateur(1, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(2, match3, 10, new Spectateur(2, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(3, match3, 100, new Spectateur(3, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(4, match3, 2, new Spectateur(4, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(5, match3, 20, new Spectateur(5, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(6, match3, 12, new Spectateur(6, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
-            Reservations.Add(new Reservation(7, match3, 19, new Spectateur(7, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds")));
+            ISpectateur spectateur1 = new Spectateur(1, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur2 = new Spectateur(2, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur3 = new Spectateur(3, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur4 = new Spectateur(4, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur5 = new Spectateur(5, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur6 = new Spectateur(6, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            ISpectateur spectateur7 = new Spectateur(7, "Jean", "Claude", new DateTime(1995, 4, 21), "rue jean", "Paris", "fs.fd@fdfd.ds");
+            Spectateurs.Add(spectateur1);
+            Spectateurs.Add(spectateur2);
+            Spectateurs.Add(spectateur3);
+            Spectateurs.Add(spectateur4);
+            Spectateurs.Add(spectateur5);
+            Spectateurs.Add(spectateur6);
+            Spectateurs.Add(spectateur7);
+
+
+            Reservations.Add(new Reservation(1, match3, 1, spectateur1));
+            Reservations.Add(new Reservation(2, match3, 10, spectateur2));
+            Reservations.Add(new Reservation(3, match3, 100, spectateur3));
+            Reservations.Add(new Reservation(4, match3, 2, spectateur4));
+            Reservations.Add(new Reservation(5, match3, 20, spectateur5));
+            Reservations.Add(new Reservation(6, match3, 12, spectateur6));
+            Reservations.Add(new Reservation(7, match3, 19, spectateur7));
         }
     }
 }

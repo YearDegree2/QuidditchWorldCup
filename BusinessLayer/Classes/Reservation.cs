@@ -59,5 +59,10 @@ namespace BusinessLayer.Classes
             Reservation reservation = (Reservation)obj;
             return Id.Equals(reservation.Id);
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0} : {1}", Spectateur, Match);
+        }
     }
 }

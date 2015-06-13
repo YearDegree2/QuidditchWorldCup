@@ -13,5 +13,6 @@ namespace BusinessLayer.Interfaces
         string Email { get; set; }
         int GetHashCode();
         bool Equals(Object obj);
+        string ToString();
     }
 }

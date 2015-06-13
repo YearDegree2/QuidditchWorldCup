@@ -28,12 +28,12 @@ namespace BusinessLayer
         {
             return Methods.GetCoupes(DalProxy.Manager.Coupes);
         }
-
+/*
         public ICollection<IMatch> GetAllMatchs()
         {
             return Methods.GetMatchs(DalProxy.Manager.Matchs);
         }
-
+/*
         public ICollection<IEquipe> GetAllEquipes()
         {
             return Methods.GetEquipes(DalProxy.Manager.Equipes);
@@ -48,15 +48,15 @@ namespace BusinessLayer
         {
             return Methods.GetArbitres(DalProxy.Manager.Arbitres);
         }
-
-        public IEnumerable<IMatch> GetMatchsByDateOrd()
+        */
+       /* public IEnumerable<IMatch> GetMatchsByDateOrd()
         {
             ICollection<IMatch> matchs = Methods.GetMatchs(DalProxy.Manager.Matchs);
             IEnumerable<IMatch> matchsOrd = matchs.Select(x => x).OrderBy(y => y.Date).ToList();
             /*from x in matchs orderby x.Date select x*/
-            return matchsOrd;
+      /*      return matchsOrd;
         }
-
+/*
         public IEnumerable<IStade> GetStadesMinOneMatch()
         {
             ICollection<IMatch> matchs = Methods.GetMatchs(DalProxy.Manager.Matchs);
@@ -67,7 +67,7 @@ namespace BusinessLayer
             }
             IEnumerable<IStade> stadesJoues = stades.Select(x => x).Distinct().ToList();
             /*(from x in stades select x).Distinct()*/
-            return stadesJoues;
+         /*   return stadesJoues;
         }
 
         public IEnumerable<IJoueur> GetAttrapeursMinOneMatchPlayed()
@@ -89,7 +89,7 @@ namespace BusinessLayer
             }
             IEnumerable<IJoueur> attrapeurs = joueurs.Select(x => x).Where(y => y.Poste == PosteJoueur.Attrapeur).Distinct().ToList();
             /*(from x in joueurs where PosteJoueur.Attrapeur == x.Poste select x).Distinct()*/
-            return attrapeurs;
+         /*   return attrapeurs;
         }
 
         public IEnumerable<IJoueur> GetGardiensMoins17Ans()
@@ -98,7 +98,7 @@ namespace BusinessLayer
             IEnumerable<IJoueur> gardiens = joueurs.Select(x => x).Where(y => DateTime.Now.Year - y.DateNaissance.Year < 17)
                                                    .Where(z => z.Poste == PosteJoueur.Gardien).Distinct().ToList();
             /*(from x in joueurs where ((DateTime.Now.Year - x.DateNaissance.Year) < 17) && PosteJoueur.Gardien == x.Poste select x).Distinct()*/
-            return gardiens;
+           /* return gardiens;
         }
 
         public int GetNbPlacesRestantes(IMatch match)
@@ -115,6 +115,48 @@ namespace BusinessLayer
                 placesUsed++;
             }
             return nbPlacesMax - placesUsed;
+        }*/
+
+
+        // Methodes pour recuperer les elements de la DataAccessLayer
+        public ICollection<ICoupe> GetCoupes()
+        {
+            return Methods.GetCoupes(DalProxy.Manager.Coupes);
+        }
+
+        public ICollection<IMatch> GetMatchs()
+        {
+            return Methods.GetMatchs(DalProxy.Manager.Matchs);
+        }
+
+        public ICollection<IEquipe> GetEquipes()
+        {
+            return Methods.GetEquipes(DalProxy.Manager.Equipes);
+        }
+
+        public ICollection<IJoueur> GetJoueurs()
+        {
+            return Methods.GetJoueurs(DalProxy.Manager.Joueurs);
+        }
+
+        public ICollection<IStade> GetStades()
+        {
+            return Methods.GetStades(DalProxy.Manager.Stades);
+        }
+
+        public ICollection<IReservation> GetReservations()
+        {
+            return Methods.GetReservations(DalProxy.Manager.Reservations);
+        }
+
+        public ICollection<IArbitre> GetArbitres()
+        {
+            return Methods.GetArbitres(DalProxy.Manager.Arbitres);
+        }
+
+        public ICollection<ISpectateur> GetSpectateurs()
+        {
+            return Methods.GetSpectateurs(DalProxy.Manager.Spectateurs);
         }
     }
 }

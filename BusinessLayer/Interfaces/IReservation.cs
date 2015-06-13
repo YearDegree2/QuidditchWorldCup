@@ -14,5 +14,6 @@ namespace BusinessLayer.Interfaces
         ISpectateur Spectateur { get; set; }
         int GetHashCode();
         bool Equals(Object obj);
+        string ToString();
     }
 }

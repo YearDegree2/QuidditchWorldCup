@@ -16,5 +16,6 @@ namespace DataAccessLayer.Manager
         System.Collections.Generic.ICollection<IStade> Stades { get; }
         System.Collections.Generic.ICollection<IReservation> Reservations { get; }
         System.Collections.Generic.ICollection<IArbitre> Arbitres { get; }
+        System.Collections.Generic.ICollection<ISpectateur> Spectateurs { get; }
     }
 }

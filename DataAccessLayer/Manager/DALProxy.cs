@@ -18,7 +18,8 @@ namespace DataAccessLayer.Manager
 
         public DALProxy()
         {
-            Manager = new StubDALManager();
+            //Manager = new StubDALManager();
+            Manager = new DALManager();
         }
     }
 }
