@@ -18,6 +18,7 @@ namespace DataAccessLayer.Manager
 
         public DALProxy()
         {
+            // Change if you want to use Stub data or DB data
             //Manager = new StubDALManager();
             Manager = new DALManager();
         }

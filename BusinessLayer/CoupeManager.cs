@@ -24,42 +24,17 @@ namespace BusinessLayer
             DalProxy = new DALProxy();
         }
 
-        public ICollection<ICoupe> GetAllCoupes()
+        public IEnumerable<IMatch> GetMatchsByDateOrd()
         {
-            return Methods.GetCoupes(DalProxy.Manager.Coupes);
-        }
-/*
-        public ICollection<IMatch> GetAllMatchs()
-        {
-            return Methods.GetMatchs(DalProxy.Manager.Matchs);
-        }
-/*
-        public ICollection<IEquipe> GetAllEquipes()
-        {
-            return Methods.GetEquipes(DalProxy.Manager.Equipes);
-        }
-
-        public ICollection<IStade> GetAllStades()
-        {
-            return Methods.GetStades(DalProxy.Manager.Stades);
-        }
-
-        public ICollection<IArbitre> GetAllArbitres()
-        {
-            return Methods.GetArbitres(DalProxy.Manager.Arbitres);
-        }
-        */
-       /* public IEnumerable<IMatch> GetMatchsByDateOrd()
-        {
-            ICollection<IMatch> matchs = Methods.GetMatchs(DalProxy.Manager.Matchs);
+            ICollection<IMatch> matchs = GetMatchs();
             IEnumerable<IMatch> matchsOrd = matchs.Select(x => x).OrderBy(y => y.Date).ToList();
             /*from x in matchs orderby x.Date select x*/
-      /*      return matchsOrd;
+            return matchsOrd;
         }
-/*
+
         public IEnumerable<IStade> GetStadesMinOneMatch()
         {
-            ICollection<IMatch> matchs = Methods.GetMatchs(DalProxy.Manager.Matchs);
+            ICollection<IMatch> matchs = GetMatchs();
             ICollection<IStade> stades = new List<IStade>();
             foreach (IMatch match in matchs)
             {
@@ -67,12 +42,12 @@ namespace BusinessLayer
             }
             IEnumerable<IStade> stadesJoues = stades.Select(x => x).Distinct().ToList();
             /*(from x in stades select x).Distinct()*/
-         /*   return stadesJoues;
+            return stadesJoues;
         }
 
         public IEnumerable<IJoueur> GetAttrapeursMinOneMatchPlayed()
         {
-            ICollection<IMatch> matchs = Methods.GetMatchs(DalProxy.Manager.Matchs);
+            ICollection<IMatch> matchs = GetMatchs();
             ICollection<IEquipe> equipes = new List<IEquipe>();
             foreach (IMatch match in matchs)
             {
@@ -89,34 +64,29 @@ namespace BusinessLayer
             }
             IEnumerable<IJoueur> attrapeurs = joueurs.Select(x => x).Where(y => y.Poste == PosteJoueur.Attrapeur).Distinct().ToList();
             /*(from x in joueurs where PosteJoueur.Attrapeur == x.Poste select x).Distinct()*/
-         /*   return attrapeurs;
+            return attrapeurs;
         }
 
         public IEnumerable<IJoueur> GetGardiensMoins17Ans()
         {
-            ICollection<IJoueur> joueurs = Methods.GetJoueurs(DalProxy.Manager.Joueurs);
+            ICollection<IJoueur> joueurs = GetJoueurs();
             IEnumerable<IJoueur> gardiens = joueurs.Select(x => x).Where(y => DateTime.Now.Year - y.DateNaissance.Year < 17)
                                                    .Where(z => z.Poste == PosteJoueur.Gardien).Distinct().ToList();
             /*(from x in joueurs where ((DateTime.Now.Year - x.DateNaissance.Year) < 17) && PosteJoueur.Gardien == x.Poste select x).Distinct()*/
-           /* return gardiens;
+            return gardiens;
         }
 
         public int GetNbPlacesRestantes(IMatch match)
         {
             int nbPlacesMax = match.Stade.NombrePlaces;
-            ICollection<IReservation> reservations = new List<IReservation>();
-            foreach (DataAccessLayer.Interfaces.IReservation reservation in DalProxy.Manager.Reservations)
-            {
-                reservations.Add(Methods.GetReservation(reservation));
-            }
+            ICollection<IReservation> reservations = GetReservations();
             int placesUsed = 0;
             foreach (IReservation reservation in reservations)
             {
                 placesUsed++;
             }
             return nbPlacesMax - placesUsed;
-        }*/
-
+        }
 
         // Methodes pour recuperer les elements de la DataAccessLayer
         public ICollection<ICoupe> GetCoupes()
