@@ -11,6 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuidditchWPF", "QuidditchWPF\QuidditchWPF.csproj", "{557CBE10-A77A-4B2B-A6A2-0BB4A19C96DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceLibrary", "WcfServiceLibrary\WcfServiceLibrary.csproj", "{DA448E50-3833-4451-AA0F-865C6D4DF8F6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsQuidditch", "WindowsFormsQuidditch\WindowsFormsQuidditch.csproj", "{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6} = {DA448E50-3833-4451-AA0F-865C6D4DF8F6}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +40,14 @@ Global
 		{557CBE10-A77A-4B2B-A6A2-0BB4A19C96DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557CBE10-A77A-4B2B-A6A2-0BB4A19C96DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{557CBE10-A77A-4B2B-A6A2-0BB4A19C96DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
