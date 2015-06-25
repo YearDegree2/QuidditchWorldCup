@@ -7,7 +7,7 @@ using DataAccessLayer.Interfaces;
 
 namespace DataAccessLayer.Classes
 {
-    class Match : IMatch
+    public class Match : IMatch
     {
         private int _id;
         private DateTime _date;

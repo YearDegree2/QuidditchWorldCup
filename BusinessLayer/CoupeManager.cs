@@ -128,5 +128,10 @@ namespace BusinessLayer
         {
             return Methods.GetSpectateurs(DalProxy.Manager.Spectateurs);
         }
+
+        public void UpdateMatchs(ICollection<IMatch> matchs)
+        {
+            DalProxy.Manager.UpdateMatchs(Methods.GetMatchsDal(matchs));
+        }
     }
 }

@@ -73,6 +73,11 @@ namespace DataAccessLayer.Manager
             set { _spectateurs = value; }
         }
 
+        public void UpdateMatchs(ICollection<IMatch> matchs)
+        {
+            Bridge.UpdateMatch(matchs);
+        }
+
         public DALManager()
         {
             Bridge = new SqlDB();

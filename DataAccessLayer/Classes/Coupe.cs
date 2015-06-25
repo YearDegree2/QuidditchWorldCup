@@ -7,7 +7,7 @@ using DataAccessLayer.Interfaces;
 
 namespace DataAccessLayer.Classes
 {
-    class Coupe : ICoupe
+    public class Coupe : ICoupe
     {
         private int _id;
         private string _year;

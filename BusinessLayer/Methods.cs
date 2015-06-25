@@ -25,6 +25,11 @@ namespace BusinessLayer
             return new Coupe(coupe.Id, coupe.Year);
         }
 
+        public static DataAccessLayer.Interfaces.ICoupe GetCoupe(ICoupe coupe)
+        {
+            return new DataAccessLayer.Classes.Coupe(coupe.Id, coupe.Year);
+        }
+
         public static ICollection<IMatch> GetMatchs(ICollection<DataAccessLayer.Interfaces.IMatch> matchsDAL)
         {
             ICollection<IMatch> matchs = new List<IMatch>();
@@ -38,6 +43,16 @@ namespace BusinessLayer
         public static IMatch GetMatch(DataAccessLayer.Interfaces.IMatch match)
         {
             return new Match(match.Id, match.Date, GetCoupe(match.Coupe), GetEquipe(match.EquipeDomicile), GetEquipe(match.EquipeVisiteur), match.Prix, GetStade(match.Stade), GetArbitre(match.Arbitre), match.ScoreEquipeDomicile, match.ScoreEquipeVisiteur);
+        }
+
+        public static ICollection<DataAccessLayer.Interfaces.IMatch> GetMatchsDal(ICollection<IMatch> matchs)
+        {
+            ICollection<DataAccessLayer.Interfaces.IMatch> matchsDAL = new List<DataAccessLayer.Interfaces.IMatch>();
+            foreach (IMatch match in matchs)
+            {
+                matchsDAL.Add(new DataAccessLayer.Classes.Match(match.Id, match.Date, GetCoupe(match.Coupe), GetEquipe(match.EquipeDomicile), GetEquipe(match.EquipeVisiteur), match.Prix, GetStade(match.Stade), GetArbitre(match.Arbitre), match.ScoreEquipeDomicile, match.ScoreEquipeVisiteur));
+            }
+            return matchsDAL;
         }
 
         public static ICollection<IEquipe> GetEquipes(ICollection<DataAccessLayer.Interfaces.IEquipe> equipesDAL)
@@ -55,6 +70,11 @@ namespace BusinessLayer
             return new Equipe(equipe.Id, equipe.Nom, equipe.Pays, GetJoueurs(equipe.Joueurs));
         }
 
+        public static DataAccessLayer.Interfaces.IEquipe GetEquipe(IEquipe equipe)
+        {
+            return new DataAccessLayer.Classes.Equipe(equipe.Id, equipe.Nom, equipe.Pays, GetJoueurs(equipe.Joueurs));
+        }
+
         public static ICollection<IJoueur> GetJoueurs(ICollection<DataAccessLayer.Interfaces.IJoueur> joueursDAL)
         {
             ICollection<IJoueur> joueurs = new List<IJoueur>();
@@ -65,9 +85,24 @@ namespace BusinessLayer
             return joueurs;
         }
 
+        public static ICollection<DataAccessLayer.Interfaces.IJoueur> GetJoueurs(ICollection<IJoueur> joueurs)
+        {
+            ICollection<DataAccessLayer.Interfaces.IJoueur> joueursDal = new List<DataAccessLayer.Interfaces.IJoueur>();
+            foreach (IJoueur joueur in joueurs)
+            {
+                joueursDal.Add(GetJoueur(joueur));
+            }
+            return joueursDal;
+        }
+
         public static IJoueur GetJoueur(DataAccessLayer.Interfaces.IJoueur joueur)
         {
             return new Joueur(joueur.Id, joueur.Nom, joueur.Prenom, joueur.DateNaissance, joueur.Numero, (PosteJoueur)joueur.Poste, joueur.Capitaine);
+        }
+
+        public static DataAccessLayer.Interfaces.IJoueur GetJoueur(IJoueur joueur)
+        {
+            return new DataAccessLayer.Classes.Joueur(joueur.Id, joueur.Nom, joueur.Prenom, joueur.DateNaissance, joueur.Numero, (DataAccessLayer.Classes.PosteJoueur)joueur.Poste, joueur.Capitaine);
         }
 
         public static ICollection<IStade> GetStades(ICollection<DataAccessLayer.Interfaces.IStade> stadesDAL)
@@ -83,6 +118,11 @@ namespace BusinessLayer
         public static IStade GetStade(DataAccessLayer.Interfaces.IStade stade)
         {
             return new Stade(stade.Id, stade.Nom, stade.Adresse, stade.Ville, stade.NombrePlaces);
+        }
+
+        public static DataAccessLayer.Interfaces.IStade GetStade(IStade stade)
+        {
+            return new DataAccessLayer.Classes.Stade(stade.Id, stade.Nom, stade.Adresse, stade.Ville, stade.NombrePlaces);
         }
 
         public static ICollection<IReservation> GetReservations(ICollection<DataAccessLayer.Interfaces.IReservation> reservationsDAL)
@@ -113,6 +153,11 @@ namespace BusinessLayer
         public static IArbitre GetArbitre(DataAccessLayer.Interfaces.IArbitre arbitre)
         {
             return new Arbitre(arbitre.Id, arbitre.Nom, arbitre.Prenom, arbitre.DateNaissance, arbitre.NumeroPoliceAssuranceVie);
+        }
+
+        public static DataAccessLayer.Interfaces.IArbitre GetArbitre(IArbitre arbitre)
+        {
+            return new DataAccessLayer.Classes.Arbitre(arbitre.Id, arbitre.Nom, arbitre.Prenom, arbitre.DateNaissance, arbitre.NumeroPoliceAssuranceVie);
         }
 
         public static ICollection<ISpectateur> GetSpectateurs(ICollection<DataAccessLayer.Interfaces.ISpectateur> spectateursDAL)

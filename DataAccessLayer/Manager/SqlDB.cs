@@ -76,7 +76,7 @@ namespace DataAccessLayer.Manager
             }
             return matchs;
         }
-        
+
         private IMatch GetMatch(int idMatch)
         {
             DataTable results = new DataTable();
@@ -165,7 +165,7 @@ namespace DataAccessLayer.Manager
 
         private IJoueur GetJoueur(int idJoueur)
         {
-            DataTable results = new DataTable(); 
+            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Joueur WHERE Id = " + idJoueur;
@@ -235,7 +235,7 @@ namespace DataAccessLayer.Manager
             }
             return reservations;
         }
-        
+
         private IReservation GetReservation(int idReservation)
         {
             DataTable results = new DataTable();
@@ -319,6 +319,33 @@ namespace DataAccessLayer.Manager
                 }
             }
             return null;
+        }
+
+        public void UpdateMatch(ICollection<IMatch> matchs)
+        {
+            // To fill
+            // Get DataTable Match actual
+            // Empty it
+            // Put matchs in it
+            // Call UpdateByCommandBuider
+            // Voir si la bdd a changr, par ex la valeur de result
+        }
+
+        private int UpdateByCommandBuilder(string request, DataTable matchs)
+        {
+            int result = 0;
+            using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                SqlCommandBuilder sqlCommandBuider = new SqlCommandBuilder(sqlDataAdapter);
+                sqlDataAdapter.UpdateCommand = sqlCommandBuider.GetUpdateCommand();
+                sqlDataAdapter.InsertCommand = sqlCommandBuider.GetInsertCommand();
+                sqlDataAdapter.DeleteCommand = sqlCommandBuider.GetDeleteCommand();
+                sqlDataAdapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                result = sqlDataAdapter.Update(matchs);
+            }
+            return result;
         }
     }
 }

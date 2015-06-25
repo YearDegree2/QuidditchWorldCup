@@ -67,6 +67,10 @@ namespace DataAccessLayer.Manager
             private set { _spectateurs = value; }
         }
 
+        public void UpdateMatchs(ICollection<IMatch> matchs)
+        {
+            // Do nothing
+        }
 
         public StubDALManager()
         {
@@ -107,7 +111,7 @@ namespace DataAccessLayer.Manager
             Joueurs.Add(j9);
             Joueurs.Add(j10);
             Joueurs.Add(j11);
-            
+
             ICollection<IJoueur> equipeDom = new List<IJoueur>();
             ICollection<IJoueur> equipeVis = new List<IJoueur>();
             equipeDom.Add(j1);

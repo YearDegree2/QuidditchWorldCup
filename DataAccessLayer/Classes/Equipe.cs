@@ -7,7 +7,7 @@ using DataAccessLayer.Interfaces;
 
 namespace DataAccessLayer.Classes
 {
-    class Equipe : IEquipe
+    public class Equipe : IEquipe
     {
         private int _id;
         private string _nom;

@@ -9,7 +9,7 @@ namespace DataAccessLayer.Classes
 {
     public enum PosteJoueur { None, Poursuiveur, Batteur, Gardien, Attrapeur };
 
-    class Joueur : IJoueur
+    public class Joueur : IJoueur
     {
         private int _id;
         private string _nom;

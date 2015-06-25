@@ -44,7 +44,7 @@ namespace QuidditchWPF.Windows
             ICollection<IStade> stades = manager.GetStades();
             ICollection<IArbitre> arbitres = manager.GetArbitres();
 
-            ViewModel.ViewModelMatchs vmm = new QuidditchWPF.ViewModel.ViewModelMatchs(matchs, coupes, equipes, stades, arbitres);
+            ViewModelMatchs vmm = new ViewModelMatchs(matchs, coupes, equipes, stades, arbitres);
             vmm.CloseNotified += CloseNotified;
             matchsWork.DataContext = vmm;
         }
@@ -56,9 +56,16 @@ namespace QuidditchWPF.Windows
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            ViewModel.ViewModelMatchs vmm = null;
+            ViewModelMatchs vmm = null;
 
-            vmm = (ViewModel.ViewModelMatchs)matchsWork.DataContext;
+            vmm = (ViewModelMatchs)matchsWork.DataContext;
+            CoupeManager manager = new CoupeManager();
+            ICollection<IMatch> matchs = new List<IMatch>();
+            foreach (ViewModelMatch m in vmm.Matchs)
+            {
+                matchs.Add(m.Match);
+            }
+            manager.UpdateMatchs(matchs);
             if (vmm != null) vmm.CloseNotified -= CloseNotified;
         }
     }
