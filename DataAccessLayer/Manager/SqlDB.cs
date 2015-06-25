@@ -28,7 +28,6 @@ namespace DataAccessLayer.Manager
 
         public ICollection<ICoupe> GetCoupes()
         {
-            DataTable results = new DataTable();
             ICollection<ICoupe> coupes = new List<ICoupe>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -45,7 +44,6 @@ namespace DataAccessLayer.Manager
 
         private ICoupe GetCoupe(int idCoupe)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Coupe WHERE Id = " + idCoupe;
@@ -60,9 +58,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdCoupe(ICoupe coupe)
+        {
+            return coupe.Id;
+        }
+
         public ICollection<IMatch> GetMatchs()
         {
-            DataTable results = new DataTable();
             ICollection<IMatch> matchs = new List<IMatch>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -79,7 +81,6 @@ namespace DataAccessLayer.Manager
 
         private IMatch GetMatch(int idMatch)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Match WHERE Id = " + idMatch;
@@ -94,9 +95,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdMatch(IMatch match)
+        {
+            return match.Id;
+        }
+
         public ICollection<IEquipe> GetEquipes()
         {
-            DataTable results = new DataTable();
             ICollection<IEquipe> equipes = new List<IEquipe>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -113,7 +118,6 @@ namespace DataAccessLayer.Manager
 
         private IEquipe GetEquipe(int idEquipe)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Equipe WHERE Id = " + idEquipe;
@@ -128,9 +132,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdEquipe(IEquipe equipe)
+        {
+            return equipe.Id;
+        }
+
         public ICollection<IJoueur> GetJoueurs()
         {
-            DataTable results = new DataTable();
             ICollection<IJoueur> joueurs = new List<IJoueur>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -147,7 +155,6 @@ namespace DataAccessLayer.Manager
 
         private ICollection<IJoueur> GetJoueusrByTeam(int idEquipe)
         {
-            DataTable results = new DataTable();
             ICollection<IJoueur> joueurs = new List<IJoueur>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -165,7 +172,6 @@ namespace DataAccessLayer.Manager
 
         private IJoueur GetJoueur(int idJoueur)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Joueur WHERE Id = " + idJoueur;
@@ -180,6 +186,11 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdJoueur(IJoueur joueur)
+        {
+            return joueur.Id;
+        }
+
         private PosteJoueur GetPosteJoueur(int idPoste)
         {
             return (PosteJoueur)idPoste;
@@ -187,7 +198,6 @@ namespace DataAccessLayer.Manager
 
         public ICollection<IStade> GetStades()
         {
-            DataTable results = new DataTable();
             ICollection<IStade> stades = new List<IStade>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -204,7 +214,6 @@ namespace DataAccessLayer.Manager
 
         private IStade GetStade(int idStade)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Stade WHERE Id = " + idStade;
@@ -219,9 +228,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdStade(IStade stade)
+        {
+            return stade.Id;
+        }
+
         public ICollection<IReservation> GetReservations()
         {
-            DataTable results = new DataTable();
             ICollection<IReservation> reservations = new List<IReservation>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -238,7 +251,6 @@ namespace DataAccessLayer.Manager
 
         private IReservation GetReservation(int idReservation)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Reservation WHERE Id = " + idReservation;
@@ -253,9 +265,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdReservation(IReservation reservation)
+        {
+            return reservation.Id;
+        }
+
         public ICollection<IArbitre> GetArbitres()
         {
-            DataTable results = new DataTable();
             ICollection<IArbitre> arbitres = new List<IArbitre>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -272,7 +288,6 @@ namespace DataAccessLayer.Manager
 
         private IArbitre GetArbitre(int idArbitre)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Arbitre WHERE Id = " + idArbitre;
@@ -287,9 +302,13 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdArbitre(IArbitre arbitre)
+        {
+            return arbitre.Id;
+        }
+
         public ICollection<ISpectateur> GetSpectateurs()
         {
-            DataTable results = new DataTable();
             ICollection<ISpectateur> spectateurs = new List<ISpectateur>();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
@@ -306,7 +325,6 @@ namespace DataAccessLayer.Manager
 
         private ISpectateur GetSpectateur(int idSpectateur)
         {
-            DataTable results = new DataTable();
             using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
             {
                 String request = "SELECT * FROM Spectateur WHERE Id = " + idSpectateur;
@@ -321,14 +339,63 @@ namespace DataAccessLayer.Manager
             return null;
         }
 
+        private int GetIdSpectateur(ISpectateur spectateur)
+        {
+            return spectateur.Id;
+        }
+
+        // Manque suppression des lignes
         public void UpdateMatch(ICollection<IMatch> matchs)
         {
-            // To fill
-            // Get DataTable Match actual
-            // Empty it
-            // Put matchs in it
-            // Call UpdateByCommandBuider
-            // Voir si la bdd a changr, par ex la valeur de result
+            ICollection<int> alreadyPut = new List<int>();
+            DataTable database = SelectByDataAdapter("SELECT * FROM Match");
+            foreach (IMatch match in matchs) {
+                DataRow[] row = database.Select("Id = '" + match.Id + "'");
+                if (row != null && !alreadyPut.Contains(match.Id) )
+                {
+                    row[0]["Date"] = match.Date;
+                    row[0]["IdCoupe"] = GetIdCoupe(match.Coupe);
+                    row[0]["IdEquipeDomicile"] = GetIdEquipe(match.EquipeDomicile);
+                    row[0]["IdEquipeVisiteur"] = GetIdEquipe(match.EquipeVisiteur);
+                    row[0]["Prix"] = match.Prix;
+                    row[0]["IdStade"] = GetIdStade(match.Stade);
+                    row[0]["IdArbitre"] = GetIdArbitre(match.Arbitre);
+                    row[0]["ScoreEquipeDomicile"] = match.ScoreEquipeDomicile;
+                    row[0]["ScoreEquipeVisiteur"] = match.ScoreEquipeVisiteur;
+                    alreadyPut.Add(match.Id);
+                }
+                else
+                {
+                    DataRow rowAdd = database.NewRow();
+                    int id = alreadyPut.Max() + 1;
+                    alreadyPut.Add(id);
+                    rowAdd["Id"] = id;
+                    rowAdd["Date"] = match.Date;
+                    rowAdd["IdCoupe"] = GetIdCoupe(match.Coupe);
+                    rowAdd["IdEquipeDomicile"] = GetIdEquipe(match.EquipeDomicile);
+                    rowAdd["IdEquipeVisiteur"] = GetIdEquipe(match.EquipeVisiteur);
+                    rowAdd["Prix"] = match.Prix;
+                    rowAdd["IdStade"] = GetIdStade(match.Stade);
+                    rowAdd["IdArbitre"] = GetIdArbitre(match.Arbitre);
+                    rowAdd["ScoreEquipeDomicile"] = match.ScoreEquipeDomicile;
+                    rowAdd["ScoreEquipeVisiteur"] = match.ScoreEquipeVisiteur;
+                    database.Rows.Add(rowAdd);
+                }
+            }
+            int res = UpdateByCommandBuilder("SELECT * FROM Match", database);
+            
+        }
+
+        private DataTable SelectByDataAdapter(string request)
+        {
+            DataTable results = new DataTable();
+            using (SqlConnection sqlConnection = new SqlConnection(ConnexionString))
+            {
+                SqlCommand sqlCommand = new SqlCommand(request, sqlConnection);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+                sqlDataAdapter.Fill(results);
+            }
+            return results;
         }
 
         private int UpdateByCommandBuilder(string request, DataTable matchs)
