@@ -16,6 +16,35 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsQuidditch", "WindowsFormsQuidditch\WindowsFormsQuidditch.csproj", "{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{DA448E50-3833-4451-AA0F-865C6D4DF8F6} = {DA448E50-3833-4451-AA0F-865C6D4DF8F6}
+		{29FF0C86-2799-4A4B-B029-E4D03878D674} = {29FF0C86-2799-4A4B-B029-E4D03878D674}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationQuidditch", "WebApplicationQuidditch\WebApplicationQuidditch.csproj", "{39483130-0E0D-475F-BAE3-73A35BD48765}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DA448E50-3833-4451-AA0F-865C6D4DF8F6} = {DA448E50-3833-4451-AA0F-865C6D4DF8F6}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WCFServiceQuidditch", "http://localhost:55996", "{29FF0C86-2799-4A4B-B029-E4D03878D674}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		ProjectReferences = "{9bc3af70-792a-47de-b9c4-765aac86bc92}|BusinessLayer.dll;{C1151229-E770-4BF7-B773-9C33B1822F30}|DataAccessLayer.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55996"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\WebSites\WCFServiceQuidditch\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55996\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55996"
+		Release.AspNetCompiler.PhysicalPath = "..\..\WebSites\WCFServiceQuidditch\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55996\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\WebSites\WCFServiceQuidditch\"
+		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
 Global
@@ -48,6 +77,14 @@ Global
 		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6FF5466-5E41-4D30-B65D-2098C30AF5C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39483130-0E0D-475F-BAE3-73A35BD48765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39483130-0E0D-475F-BAE3-73A35BD48765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39483130-0E0D-475F-BAE3-73A35BD48765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39483130-0E0D-475F-BAE3-73A35BD48765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FF0C86-2799-4A4B-B029-E4D03878D674}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FF0C86-2799-4A4B-B029-E4D03878D674}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FF0C86-2799-4A4B-B029-E4D03878D674}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FF0C86-2799-4A4B-B029-E4D03878D674}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WcfServiceLibrary;
 
 namespace WindowsFormsQuidditch
 {
@@ -21,11 +20,11 @@ namespace WindowsFormsQuidditch
         private void buttonMatch_Click(object sender, EventArgs e)
         {
             this.listBoxMatch.Visible = true;
-            ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
-            ICollection<CompositeType> matchs = (ICollection<CompositeType>) client.GetMatchs();
-            foreach (CompositeType match in matchs)
+            ServiceReference1.ServiceClient client = new ServiceReference1.ServiceClient();
+            ICollection<ServiceReference1.CompositeType> matchs = (ICollection<ServiceReference1.CompositeType>)client.GetMatchs();
+            foreach (ServiceReference1.CompositeType match in matchs)
             {
-                listBoxMatch.Items.Add(match.ToString());
+                listBoxMatch.Items.Add(String.Format("{0} ({1}) : {2} {3} - {4} {5}", match.Coupe, match.Date, match.EquipeDomicile, match.ScoreEquipeDomicile, match.ScoreEquipeVisiteur, match.EquipeVisiteur));
             }
         }
     }

@@ -9,51 +9,242 @@
 //------------------------------------------------------------------------------
 
 namespace WindowsFormsQuidditch.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
     
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
-    public interface IService1 {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/")]
+    [System.SerializableAttribute()]
+    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMatchs", ReplyAction="http://tempuri.org/IService1/GetMatchsResponse")]
-        WcfServiceLibrary.CompositeType[] GetMatchs();
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMatchs", ReplyAction="http://tempuri.org/IService1/GetMatchsResponse")]
-        System.Threading.Tasks.Task<WcfServiceLibrary.CompositeType[]> GetMatchsAsync();
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ArbitreField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CoupeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EquipeDomicileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EquipeVisiteurField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PrixField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ScoreEquipeDomicileField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ScoreEquipeVisiteurField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StadeField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Arbitre {
+            get {
+                return this.ArbitreField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ArbitreField, value) != true)) {
+                    this.ArbitreField = value;
+                    this.RaisePropertyChanged("Arbitre");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Coupe {
+            get {
+                return this.CoupeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CoupeField, value) != true)) {
+                    this.CoupeField = value;
+                    this.RaisePropertyChanged("Coupe");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EquipeDomicile {
+            get {
+                return this.EquipeDomicileField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EquipeDomicileField, value) != true)) {
+                    this.EquipeDomicileField = value;
+                    this.RaisePropertyChanged("EquipeDomicile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string EquipeVisiteur {
+            get {
+                return this.EquipeVisiteurField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EquipeVisiteurField, value) != true)) {
+                    this.EquipeVisiteurField = value;
+                    this.RaisePropertyChanged("EquipeVisiteur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Prix {
+            get {
+                return this.PrixField;
+            }
+            set {
+                if ((this.PrixField.Equals(value) != true)) {
+                    this.PrixField = value;
+                    this.RaisePropertyChanged("Prix");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ScoreEquipeDomicile {
+            get {
+                return this.ScoreEquipeDomicileField;
+            }
+            set {
+                if ((this.ScoreEquipeDomicileField.Equals(value) != true)) {
+                    this.ScoreEquipeDomicileField = value;
+                    this.RaisePropertyChanged("ScoreEquipeDomicile");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ScoreEquipeVisiteur {
+            get {
+                return this.ScoreEquipeVisiteurField;
+            }
+            set {
+                if ((this.ScoreEquipeVisiteurField.Equals(value) != true)) {
+                    this.ScoreEquipeVisiteurField = value;
+                    this.RaisePropertyChanged("ScoreEquipeVisiteur");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Stade {
+            get {
+                return this.StadeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StadeField, value) != true)) {
+                    this.StadeField = value;
+                    this.RaisePropertyChanged("Stade");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : WindowsFormsQuidditch.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
+    public interface IService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMatchs", ReplyAction="http://tempuri.org/IService/GetMatchsResponse")]
+        WindowsFormsQuidditch.ServiceReference1.CompositeType[] GetMatchs();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetMatchs", ReplyAction="http://tempuri.org/IService/GetMatchsResponse")]
+        System.Threading.Tasks.Task<WindowsFormsQuidditch.ServiceReference1.CompositeType[]> GetMatchsAsync();
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IServiceChannel : WindowsFormsQuidditch.ServiceReference1.IService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<WindowsFormsQuidditch.ServiceReference1.IService1>, WindowsFormsQuidditch.ServiceReference1.IService1 {
+    public partial class ServiceClient : System.ServiceModel.ClientBase<WindowsFormsQuidditch.ServiceReference1.IService>, WindowsFormsQuidditch.ServiceReference1.IService {
         
-        public Service1Client() {
+        public ServiceClient() {
         }
         
-        public Service1Client(string endpointConfigurationName) : 
+        public ServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public Service1Client(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
         
-        public WcfServiceLibrary.CompositeType[] GetMatchs() {
+        public WindowsFormsQuidditch.ServiceReference1.CompositeType[] GetMatchs() {
             return base.Channel.GetMatchs();
         }
         
-        public System.Threading.Tasks.Task<WcfServiceLibrary.CompositeType[]> GetMatchsAsync() {
+        public System.Threading.Tasks.Task<WindowsFormsQuidditch.ServiceReference1.CompositeType[]> GetMatchsAsync() {
             return base.Channel.GetMatchsAsync();
         }
     }
