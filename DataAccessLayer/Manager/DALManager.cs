@@ -83,6 +83,11 @@ namespace DataAccessLayer.Manager
             Bridge.AddReservation(id, idMatch, place, idSpectateur);
         }
 
+        public void EditReservation(int id, int place)
+        {
+            Bridge.EditReservation(id, place);
+        }
+
         public void DeleteReservation(IReservation reservation)
         {
             Bridge.DeleteReservation(reservation);

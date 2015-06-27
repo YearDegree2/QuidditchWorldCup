@@ -20,5 +20,6 @@ namespace DataAccessLayer.Manager
         void UpdateMatch(ICollection<IMatch> matchs);
         void AddReservation(int id, int idMatch, int place, int idSpectateur);
         void DeleteReservation(IReservation reservation);
+        void EditReservation(int id, int place);
     }
 }

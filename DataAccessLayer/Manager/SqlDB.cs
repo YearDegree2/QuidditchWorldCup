@@ -397,6 +397,19 @@ namespace DataAccessLayer.Manager
             int res = UpdateByCommandBuilder("SELECT * FROM Reservation", database);
         }
 
+        public void EditReservation(int id, int place)
+        {
+            DataTable database = SelectByDataAdapter("SELECT * FROM Reservation");
+            foreach (DataRow row in database.Rows)
+            {
+                if (row["Id"].Equals(id))
+                {
+                    row["Place"] = place;
+                }
+            }
+            int res = UpdateByCommandBuilder("SELECT * FROM Reservation", database);
+        }
+
         public void DeleteReservation(IReservation reservation)
         {
             DataTable database = SelectByDataAdapter("SELECT * FROM Reservation");

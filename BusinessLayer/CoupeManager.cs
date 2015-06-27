@@ -157,6 +157,11 @@ namespace BusinessLayer
             DalProxy.Manager.AddReservation(id, idMatch, place, idSpectateur);
         }
 
+        public void EditReservation(int id, int place)
+        {
+            DalProxy.Manager.EditReservation(id, place);
+        }
+
         public void DeleteReservation(int idReservation)
         {
             IReservation reservation = GetReservation(idReservation);

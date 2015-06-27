@@ -25,7 +25,7 @@ namespace QuidditchWorldCup
             IEnumerable<IJoueur> gardiensMoins17Ans = coupeManager.GetGardiensMoins17Ans();
             IEnumerable<IMatch> matchs = coupeManager.GetMatchs();
             int nbPlacesRestantes = coupeManager.GetNbPlacesRestantes(matchs.First());
-            
+
             Console.WriteLine("Coupes : ");
             foreach (ICoupe coupe in coupes)
             {

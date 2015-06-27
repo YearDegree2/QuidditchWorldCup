@@ -19,6 +19,7 @@ namespace DataAccessLayer.Manager
         System.Collections.Generic.ICollection<ISpectateur> Spectateurs { get; }
         void UpdateMatchs(ICollection<IMatch> matchs);
         void AddReservation(int id, int idMatch, int place, int idSpectateur);
+        void EditReservation(int id, int place);
         void DeleteReservation(IReservation reservation);
     }
 }
