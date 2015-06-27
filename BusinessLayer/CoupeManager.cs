@@ -99,6 +99,12 @@ namespace BusinessLayer
             return Methods.GetMatchs(DalProxy.Manager.Matchs);
         }
 
+        public IMatch GetMatch(int idMatch)
+        {
+            ICollection<IMatch> matchs = GetMatchs();
+            return matchs.Select(x => x).Where(y => y.Id == idMatch).First();
+        }
+
         public ICollection<IEquipe> GetEquipes()
         {
             return Methods.GetEquipes(DalProxy.Manager.Equipes);
@@ -119,6 +125,18 @@ namespace BusinessLayer
             return Methods.GetReservations(DalProxy.Manager.Reservations);
         }
 
+        public IEnumerable<IReservation> GetReservations(int idMatch)
+        {
+            ICollection<IReservation> reservations = GetReservations();
+            return reservations.Select(x => x).Where(y => y.Match.Id == idMatch).ToList();
+        }
+
+        public IReservation GetReservation(int idReservation)
+        {
+            ICollection<IReservation> reservations = GetReservations();
+            return reservations.Select(x => x).Where(y => y.Id == idReservation).First();
+        }
+
         public ICollection<IArbitre> GetArbitres()
         {
             return Methods.GetArbitres(DalProxy.Manager.Arbitres);
@@ -132,6 +150,12 @@ namespace BusinessLayer
         public void UpdateMatchs(ICollection<IMatch> matchs)
         {
             DalProxy.Manager.UpdateMatchs(Methods.GetMatchsDal(matchs));
+        }
+
+        public void DeleteReservation(int idReservation)
+        {
+            IReservation reservation = GetReservation(idReservation);
+            DalProxy.Manager.DeleteReservation(Methods.GetReservation(reservation));
         }
     }
 }

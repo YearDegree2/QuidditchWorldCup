@@ -78,6 +78,11 @@ namespace DataAccessLayer.Manager
             Bridge.UpdateMatch(matchs);
         }
 
+        public void DeleteReservation(IReservation reservation)
+        {
+            Bridge.DeleteReservation(reservation);
+        }
+
         public DALManager()
         {
             Bridge = new SqlDB();

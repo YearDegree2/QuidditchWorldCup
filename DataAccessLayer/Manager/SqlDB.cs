@@ -383,7 +383,14 @@ namespace DataAccessLayer.Manager
                 }
             }
             int res = UpdateByCommandBuilder("SELECT * FROM Match", database);
-            
+        }
+
+        public void DeleteReservation(IReservation reservation)
+        {
+            DataTable database = SelectByDataAdapter("SELECT * FROM Reservation");
+            DataRow[] rowToSuppress = database.Select("Id = '" + reservation.Id + "'");
+            rowToSuppress[0].Delete();
+            int res = UpdateByCommandBuilder("SELECT * FROM Reservation", database);
         }
 
         private DataTable SelectByDataAdapter(string request)

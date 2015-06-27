@@ -18,5 +18,6 @@ namespace DataAccessLayer.Manager
         System.Collections.Generic.ICollection<IArbitre> Arbitres { get; }
         System.Collections.Generic.ICollection<ISpectateur> Spectateurs { get; }
         void UpdateMatchs(ICollection<IMatch> matchs);
+        void DeleteReservation(IReservation reservation);
     }
 }

@@ -45,6 +45,11 @@ namespace BusinessLayer
             return new Match(match.Id, match.Date, GetCoupe(match.Coupe), GetEquipe(match.EquipeDomicile), GetEquipe(match.EquipeVisiteur), match.Prix, GetStade(match.Stade), GetArbitre(match.Arbitre), match.ScoreEquipeDomicile, match.ScoreEquipeVisiteur);
         }
 
+        public static DataAccessLayer.Interfaces.IMatch GetMatch(IMatch match)
+        {
+            return new DataAccessLayer.Classes.Match(match.Id, match.Date, GetCoupe(match.Coupe), GetEquipe(match.EquipeDomicile), GetEquipe(match.EquipeVisiteur), match.Prix, GetStade(match.Stade), GetArbitre(match.Arbitre), match.ScoreEquipeDomicile, match.ScoreEquipeVisiteur);
+        }
+
         public static ICollection<DataAccessLayer.Interfaces.IMatch> GetMatchsDal(ICollection<IMatch> matchs)
         {
             ICollection<DataAccessLayer.Interfaces.IMatch> matchsDAL = new List<DataAccessLayer.Interfaces.IMatch>();
@@ -140,6 +145,11 @@ namespace BusinessLayer
             return new Reservation(reservation.Id, GetMatch(reservation.Match), reservation.Place, GetSpectateur(reservation.Spectateur));
         }
 
+        public static DataAccessLayer.Interfaces.IReservation GetReservation(IReservation reservation)
+        {
+            return new DataAccessLayer.Classes.Reservation(reservation.Id, GetMatch(reservation.Match), reservation.Place, GetSpectateur(reservation.Spectateur));
+        }
+
         public static ICollection<IArbitre> GetArbitres(ICollection<DataAccessLayer.Interfaces.IArbitre> arbitresDAL)
         {
             ICollection<IArbitre> arbitres = new List<IArbitre>();
@@ -173,6 +183,11 @@ namespace BusinessLayer
         public static ISpectateur GetSpectateur(DataAccessLayer.Interfaces.ISpectateur spectateur)
         {
             return new Spectateur(spectateur.Id, spectateur.Nom, spectateur.Prenom, spectateur.DateNaissance, spectateur.Adresse, spectateur.Ville, spectateur.Email);
+        }
+
+        public static DataAccessLayer.Interfaces.ISpectateur GetSpectateur(ISpectateur spectateur)
+        {
+            return new DataAccessLayer.Classes.Spectateur(spectateur.Id, spectateur.Nom, spectateur.Prenom, spectateur.DateNaissance, spectateur.Adresse, spectateur.Ville, spectateur.Email);
         }
     }
 }

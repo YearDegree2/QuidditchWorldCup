@@ -7,7 +7,7 @@ using DataAccessLayer.Interfaces;
 
 namespace DataAccessLayer.Classes
 {
-    class Reservation : IReservation
+    public class Reservation : IReservation
     {
         private int _id;
         private IMatch _match;

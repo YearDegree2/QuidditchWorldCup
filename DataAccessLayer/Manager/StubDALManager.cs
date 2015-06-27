@@ -72,6 +72,11 @@ namespace DataAccessLayer.Manager
             // Do nothing
         }
 
+        public void DeleteReservation(IReservation reservation)
+        {
+            // Do nothing
+        }
+
         public StubDALManager()
         {
             Coupes = new List<ICoupe>();

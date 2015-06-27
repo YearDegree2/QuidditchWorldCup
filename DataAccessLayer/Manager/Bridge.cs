@@ -18,5 +18,6 @@ namespace DataAccessLayer.Manager
         ICollection<IArbitre> GetArbitres();
         ICollection<ISpectateur> GetSpectateurs();
         void UpdateMatch(ICollection<IMatch> matchs);
+        void DeleteReservation(IReservation reservation);
     }
 }
