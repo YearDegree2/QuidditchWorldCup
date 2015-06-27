@@ -72,6 +72,11 @@ namespace DataAccessLayer.Manager
             // Do nothing
         }
 
+        public void AddReservation(int id, int idMatch, int place, int idSpectateur)
+        {
+            // Do nothing
+        }
+
         public void DeleteReservation(IReservation reservation)
         {
             // Do nothing

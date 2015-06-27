@@ -152,10 +152,21 @@ namespace BusinessLayer
             DalProxy.Manager.UpdateMatchs(Methods.GetMatchsDal(matchs));
         }
 
+        public void AddReservation(int id, int idMatch, int place, int idSpectateur)
+        {
+            DalProxy.Manager.AddReservation(id, idMatch, place, idSpectateur);
+        }
+
         public void DeleteReservation(int idReservation)
         {
             IReservation reservation = GetReservation(idReservation);
             DalProxy.Manager.DeleteReservation(Methods.GetReservation(reservation));
+        }
+
+        public int GetNewIdForReservation()
+        {
+            ICollection<IReservation> reservations = GetReservations();
+            return reservations.Last().Id + 1;
         }
     }
 }

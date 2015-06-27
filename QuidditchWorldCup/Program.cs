@@ -17,7 +17,7 @@ namespace QuidditchWorldCup
 
             // Permet de tester toutes les listes pour voir qu'elles marchent et ne sont pas vides, a appeler juste quand on teste
             //Test.testDALAccess(coupeManager);
-
+            
             ICollection<ICoupe> coupes = coupeManager.GetCoupes();
             IEnumerable<IMatch> matchsOrd = coupeManager.GetMatchsByDateOrd();
             IEnumerable<IStade> stades = coupeManager.GetStadesMinOneMatch();
@@ -25,7 +25,7 @@ namespace QuidditchWorldCup
             IEnumerable<IJoueur> gardiensMoins17Ans = coupeManager.GetGardiensMoins17Ans();
             IEnumerable<IMatch> matchs = coupeManager.GetMatchs();
             int nbPlacesRestantes = coupeManager.GetNbPlacesRestantes(matchs.First());
-
+            
             Console.WriteLine("Coupes : ");
             foreach (ICoupe coupe in coupes)
             {
